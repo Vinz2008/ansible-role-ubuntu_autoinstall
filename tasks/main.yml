@@ -1,7 +1,4 @@
 ---
-- name: Configure the target system and install dependencies
-  include_tasks: configure.yml
-
 - name: Download and verify the ISO
   include_tasks: download_verify.yml
 
