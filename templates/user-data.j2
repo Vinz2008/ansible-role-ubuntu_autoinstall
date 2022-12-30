@@ -22,6 +22,7 @@ autoinstall:
     swap:
       size: 0
 {% endif %}
+{% if not disk_config %}
     config:
     - {ptable: gpt, serial: "{{ boot_drive_serial }}", preserve: false, name: '', grub_device: false, type: disk, id: bootdrive}
 
@@ -33,3 +34,4 @@ autoinstall:
 
     - {device: root, path: /, type: mount, id: rootmount}
     - {device: efi, path: /boot/efi, type: mount, id: efimount}
+{% endif %}
