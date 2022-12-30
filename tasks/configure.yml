@@ -7,7 +7,16 @@
       - gpg
       - curl
     state: present
-  when: ansible_os_family != "Darwin"
+  when: ansible_distribution == "Ubuntu"
+ - name: Install dependencies (archlinux)
+  become: yes
+  community.general.pacman:
+    name: 
+      - xorriso
+      - gpg
+      - curl
+    state: present
+  when: ansible_distribution != "Ubuntu" and ansible_os_family != "Darwin"
 
 - name: Install dependencies (macOS)
   package:
