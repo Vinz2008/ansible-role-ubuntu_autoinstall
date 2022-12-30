@@ -30,3 +30,5 @@ enable_pikvm: false
 enable_hwe_kernel: false
 
 enable_swap_file: false
+
+disk_config: false
