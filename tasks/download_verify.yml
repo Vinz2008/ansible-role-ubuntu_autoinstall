@@ -14,7 +14,6 @@
   get_url:
     url: "https://cdimage.ubuntu.com/ubuntu-server/focal/daily-live/current/focal-live-server-{{ iso_arch }}.iso"
     dest: "{{ target_dir }}/focal-live-server-{{ iso_arch }}.iso"
-    checksum: "sha256:{{ sha256sum.stdout }}"
 
 - name: Download the GPG keys
   get_url:
